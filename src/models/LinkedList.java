@@ -5,16 +5,16 @@ import materia.models.*;
 public class LinkedList<T> {
 
     // Variables
-    private NodeGenerico<T> head;// referencia del primer nodo
-    private int size = 0;// Contador del numero de nodos
+    private NodeGenerico<T> head; // referencia del primer nodo
+    private int size = 0;         // Contador del número de nodos
 
-    // Constructor
-    public LinkedList(NodeGenerico<T> head, int size) {
-        this.head = head;
-        this.size = size;
+    // Constructor vacío
+    public LinkedList() {
+        this.head = null;
+        this.size = 0;
     }
 
-    // Getters and Setters
+    // Getters y Setters
     public NodeGenerico<T> getHead() {
         return head;
     }
@@ -31,8 +31,7 @@ public class LinkedList<T> {
         this.size = size;
     }
 
-    // Metodos de la clase
-
+    // Métodos de la clase
     public void appendToTail(T value) {
         NodeGenerico<T> newNode = new NodeGenerico<>(value);
         if (head == null) {
@@ -46,6 +45,7 @@ public class LinkedList<T> {
         }
         size++;
     }
+
 
     public void findByValue(T value) {
 
