@@ -1,12 +1,13 @@
 package models;
 
-import materia.models.*;
+import materia.models.NodeGenerico;
 
 public class LinkedList<T> {
 
     // Variables
     private NodeGenerico<T> head; // referencia del primer nodo
     private int size = 0;         // Contador del número de nodos
+    public int setSize;
 
     // Constructor vacío
     public LinkedList() {
@@ -44,15 +45,6 @@ public class LinkedList<T> {
             current.setNext(newNode);
         }
         size++;
-    }
-
-
-    public void findByValue(T value) {
-
-    }
-
-    public void deleteByValue(T value) {
-
     }
 
     public void print() {

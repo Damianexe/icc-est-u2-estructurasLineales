@@ -2,6 +2,8 @@ package materia.Stacks;
 
 import java.util.EmptyStackException;
 import materia.models.Node;
+
+
 public class Stack {
     // LIFO: Last In First Out
 

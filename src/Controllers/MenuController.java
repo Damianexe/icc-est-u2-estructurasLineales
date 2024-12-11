@@ -18,7 +18,7 @@ public class MenuController {
         boolean exit = false;
         while (!exit) {
             consoleview.displayMenu();
-            String option = consoleview.getInput("null XD");
+            String option = consoleview.getInput("null Xd");
             switch (option) {
                 case "1":
                     addContact(); {
@@ -26,12 +26,12 @@ public class MenuController {
                 }
                     break;
                 case "2":
-                    findContact(); {
+                    findContactByName(); {
 
                 }
                     break;
                 case "3":
-                    deleteContact(); {
+                    deleteContactByName(); {
 
                 }
                     break;
@@ -50,7 +50,7 @@ public class MenuController {
             }
         }
     }
-
+    // Metodo que permite añadir un contacto
     private void addContact() {
         String name = consoleview.getInput("Enter name");
         String phone = consoleview.getInput("Enter phone");
@@ -60,20 +60,28 @@ public class MenuController {
 
     }
 
+    //Método que permite imprimir la lista de contactos
     private void printList() {
-        // TODO Auto-generated method stub
-        String message = "Unimplemented method 'printList'";
-        throw new UnsupportedOperationException(message);
+        consoleview.showMessage("Contact List:");
+        contactManager.printList(); // Delegar la impresión al ContactManager
     }
 
-    private void deleteContact() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteContact'");
+    //Metodo que elimina el contacto seleccionado
+    private void deleteContactByName() {
+        String name = consoleview.getInput("Enter a name to search");
+        contactManager.deleteContactByName(name);
+        consoleview.showMessage("Contact Deleted");
     }
 
-    private void findContact() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findContact'");
+    //Metodo que encuentra un contacto
+    private void findContactByName() {
+        String name= consoleview.getInput("Enter a name to search");
+        Contact<?,?> contact = contactManager.findContactByName(name);
+        if ( contact != null){
+            consoleview.showMessage("Contact found" + contact);
+        }else{
+            consoleview.showMessage("Contact not found");
+        }
     }
 
 }
