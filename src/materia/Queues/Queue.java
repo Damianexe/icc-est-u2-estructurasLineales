@@ -1,6 +1,7 @@
-package materia.Queues;
-import materia.models.*;
+package Materia.Queues;
 import java.util.NoSuchElementException;
+
+import Materia.Modelos.*;
 public class Queue {
 
     private Node front; //nodo al frente de la cola

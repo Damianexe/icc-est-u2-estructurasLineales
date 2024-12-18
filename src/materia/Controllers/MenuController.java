@@ -1,7 +1,7 @@
-package Controllers;
+package Materia.Controllers;
 
-import Views.ConsoleView;
-import models.Contact;
+import Materia.Models.Contact;
+import Materia.Views.ConsoleView;
 
 public class MenuController {
 
@@ -67,11 +67,12 @@ public class MenuController {
     }
 
     //Metodo que elimina el contacto seleccionado
-    private void deleteContactByName() {
+
+     private void deleteContactByName(){
         String name = consoleview.getInput("Enter a name to search");
         contactManager.deleteContactByName(name);
-        consoleview.showMessage("Contact Deleted");
-    }
+        consoleview.showMessage("Contact Deleted ");
+        }
 
     //Metodo que encuentra un contacto
     private void findContactByName() {

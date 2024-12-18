@@ -1,8 +1,8 @@
-package Controllers;
+package Materia.Controllers;
 
-import models.Contact;
-import models.LinkedList; // Clase del programa 
-import materia.models.NodeGenerico;
+import Materia.Modelos.NodeGenerico;
+import Materia.Models.Contact;
+import Materia.Models.LinkedList;
 
 public class ContactManager {
     private LinkedList<Contact<?,?>> contacts = new LinkedList<>();

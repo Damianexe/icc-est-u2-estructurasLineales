@@ -1,4 +1,4 @@
-package models;
+package Materia.Models;
 
 public class Contact <T,U>{
     private T name;

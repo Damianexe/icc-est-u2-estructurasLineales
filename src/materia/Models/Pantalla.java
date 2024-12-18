@@ -1,4 +1,4 @@
-package models;
+package Materia.Models;
 
 public class Pantalla {
     private int id;

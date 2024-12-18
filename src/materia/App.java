@@ -1,14 +1,71 @@
-import materia.Stacks.Stack;
-import Controllers.MenuController;
-import materia.Queues.*;
-import materia.Queues.QueueGeneric;
-import materia.Stacks.*;
-import models.Pantalla;
+package Materia;
+import java.util.Scanner;
+
+import Materia.Controllers.MenuController;
+import Materia.Models.Pantalla;
+import Materia.Queues.*;
+import Materia.Stacks.*;
+import Materia.Ejercicio_01_sign.*;
+import Materia.Ejercicio_02_sorting.*;
+import Materia.Stacks.Stack;
 
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        runContactManager();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        boolean continuar = true;
+
+        System.out.println("/------------- Validador de Símbolos -------------/");
+        
+        while (continuar) {
+            System.out.print("Ingrese una expresión con paréntesis, corchetes o llaves (o escriba 'salir' para finalizar): ");
+            String input = scanner.nextLine(); // Captura la expresión del usuario
+
+            // Permitir salida si el usuario escribe "salir"
+            if (input.equalsIgnoreCase("salir")) {
+                continuar = false;
+                System.out.println("Saliendo del programa...");
+                break;
+            }
+
+            // Valida la expresión
+            boolean resultado = Ejercicio_01.isValid(input); 
+
+            if (resultado) {
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+            }
+
+            System.out.println(); 
+        }
+
+        
+        /*------------------------------------------------------------------------------------------------------------
+         * 2DO EJERCICIO
+         */
+
+        java.util.Stack<Integer> stack = new java.util.Stack<>(); 
+
+        System.out.println("------------- Ordenador de Stack -------------");
+        System.out.print("Ingrese el número de elementos en el stack: ");
+        int n = scanner.nextInt();
+
+        System.out.println("Ingrese los elementos del stack:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Elemento " + (i + 1) + ": ");
+            stack.push(scanner.nextInt());
+        }
+
+        System.out.println("\nStack original: " + stack);
+
+        // Llamada al método ordenarStack desde Ejercicio_02_sorting
+        java.util.Stack<Integer> ordenado = Ejercicio_02.ordenarStack(stack);
+
+        System.out.println("Stack ordenado: " + ordenado);
+    }
+}
+        /*runContactManager();
         //runStack();
         //runStackGeneric();
         //runQueue();
@@ -18,7 +75,9 @@ public class App {
     private static void runContactManager(){
         MenuController menuController = new MenuController();
         menuController.showMenu();
-    }
+    }*/
+
+    
 
     /*public static void runStack(){
         // Instanciar la clase
@@ -85,4 +144,3 @@ public class App {
         System.out.println("Tamanio= "+ colageneric.getSizeQueue());
         colageneric.printqueue();
     } */
-}

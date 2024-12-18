@@ -1,4 +1,4 @@
-package materia.models;
+package Materia.Modelos;
 
 public class Node {
     private int value; //valor del nodo

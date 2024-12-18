@@ -1,6 +1,6 @@
-package models;
+package Materia.Models;
 
-import materia.models.NodeGenerico;
+import Materia.Modelos.*;
 
 public class LinkedList<T> {
 
@@ -32,7 +32,7 @@ public class LinkedList<T> {
         this.size = size;
     }
 
-    // Métodos de la clase
+    
     public void appendToTail(T value) {
         NodeGenerico<T> newNode = new NodeGenerico<>(value);
         if (head == null) {
@@ -47,17 +47,13 @@ public class LinkedList<T> {
         size++;
     }
 
+    //Metodo que imprime la lista de Contactos
     public void print() {
-        if (head == null) {
-            System.out.println("END");
-            return;
-        }
         NodeGenerico<T> current = head;
-        while (current.getNext() != null) {
+        while (current != null) {
             System.out.println(current.getValue());
-            current = current.getNext();
+            current=current.getNext();
         }
-        System.out.println("END");
     }
 
 }

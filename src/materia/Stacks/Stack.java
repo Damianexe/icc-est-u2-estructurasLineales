@@ -1,8 +1,8 @@
-package materia.Stacks;
+package Materia.Stacks;
 
 import java.util.EmptyStackException;
-import materia.models.Node;
 
+import Materia.Modelos.Node;
 
 public class Stack {
     // LIFO: Last In First Out
@@ -15,13 +15,15 @@ public class Stack {
     }
 
     // Método para agregar elementos a la pila
-    public void push(int valor) {
+    
+     public void push(int valor) {
         Node newNode = new Node(valor);
         newNode.setNext(top); // El nuevo nodo apunta al nodo que estaba en la cima
         top = newNode; // Actualizar la cima de la pila
     }
 
     // Método que retira el nodo de la cima
+    
     public int pop() {
         if (isEmpty()) {
             throw new EmptyStackException();
@@ -65,3 +67,35 @@ public class Stack {
         return size;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
